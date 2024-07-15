@@ -1,17 +1,20 @@
+// Import modul React dari paket 'react'
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// Import fungsi createRoot dari 'react-dom/client' untuk membuat root dari aplikasi React
+import { createRoot } from 'react-dom/client';
+// Import file CSS untuk styling global
 import './index.css';
+// Import komponen utama App dari file 'App'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Mendapatkan elemen HTML dengan id 'root' yang akan menjadi root dari aplikasi React
+const container = document.getElementById('root');
+// Membuat root React pada elemen container
+const root = createRoot(container);
+
+// Merender aplikasi React dengan mode strict
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
